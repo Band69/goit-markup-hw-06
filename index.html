@@ -17,7 +17,7 @@
 
   <body>
     <!--Header-->
-    <header class="header">
+    <header class="header header--no-border">
       <div class="conteiner">
         <div class="header__menu">
           <nav class="nav">
@@ -83,7 +83,93 @@
           <h1 class="hero__title">
             Эффективные решения для вашего бизнеса
           </h1>
-          <a href="" class="vrt-button vrt-button--no-link">Заказать услугу</a>
+          <button class="hero__btn button button--no-link" data-modal-open>
+            Заказать услугу
+          </button>
+          <div class="backdrop backdrop--hiden" data-modal>
+            <div class="modal">
+              <button class="modal__close-btn" data-modal-close>
+                <svg class="modal__close-icon" width="11" height="11">
+                  <use href="./image/symbol-defs.svg#icon-close"></use>
+                </svg>
+              </button>
+              <p class="modal__title">
+                Оставьте свои данные, мы вам перезвоним
+              </p>
+              <form class="form js-speaker-form">
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="text"
+                    name="name"
+                    minlength="3"
+                    maxlength="20"
+                    autocomplete="name"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Имя</span>
+                  <svg class="form__icon">
+                    <use href="./image/symbol-defs.svg#modal-person"></use>
+                  </svg>
+                </label>
+
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="tel"
+                    name="tel"
+                    autocomplete="tel"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Телефон</span>
+                  <svg class="form__icon">
+                    <use href="./image/symbol-defs.svg#modal-phone"></use>
+                  </svg>
+                </label>
+
+                <label class="form__field">
+                  <input
+                    class="form__input"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder=" "
+                  />
+                  <span class="form__field-title">Почта</span>
+                  <svg class="form__icon">
+                    <use href="./image/symbol-defs.svg#modal-email"></use>
+                  </svg>
+                </label>
+
+                <label class="form__field">
+                  <textarea name="comment" rows="6" placeholder=" "></textarea>
+                  <span class="form__field-title form__field-title--no-image"
+                    >Комментарий</span
+                  >
+                </label>
+
+                <label class="form__field policy">
+                  <input
+                    class="checkbox checkbox--hiden"
+                    type="checkbox"
+                    name="policy"
+                    value="agree"
+                  />
+                  <span class="checkbox__icon"></span>
+                  Соглашаюсь с рассылкой и принимаю
+
+                  <a href="">Условия договора</a>
+                </label>
+                <button
+                  class="submit__btn button"
+                  type="submit"
+                  data-modal-close
+                >
+                  Отправить
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -578,12 +664,18 @@
                 id="email"
                 placeholder="E-mail"
               />
-              <input class="join__btn" type="button" value="Подписаться" />
+              <a class="button join__btn join__btn--no-link" href=""
+                >Подписаться
+                <svg class="icon-send" width="20" height="20">
+                  <use href="./image/symbol-defs.svg#icon-send"></use>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
         <p class="copiright">2020 | Developed by GoIT Students</p>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
